@@ -1,0 +1,15 @@
+Console Python Tasks:
+
+1.  **Advanced Calculator:** Extend the command-line calculator to handle expressions with multiple operators and parentheses, respecting the order of operations (PEMDAS). Implement error handling for invalid expressions.
+2.  **File-Based To-Do List:** Enhance the to-do list manager to persist tasks to a JSON or CSV file. Users should be able to load tasks from the file on startup and save them on exit.
+3.  **Number Guessing Game with Levels:** Add difficulty levels (e.g., easy, medium, hard) to the number guessing game, which affects the range of the random number. Give the user a limited number of attempts based on the difficulty.
+4.  **Sentence Palindrome Checker:** Modify the palindrome checker to handle full sentences, ignoring punctuation, capitalization, and spaces. For example, "A man, a plan, a canal: Panama" should be considered a palindrome.
+5.  **Multi-Category Unit Converter:** Expand the unit converter to support multiple categories of conversions (e.g., temperature, length, weight). Allow the user to first select a category and then the specific units to convert between.
+
+Flask Tasks:
+
+1.  **In-Memory User Profile API:** Create a Flask application with endpoints to manage user profiles (e.g., `/users`, `/users/<id>`). Store user data in a dictionary in memory. Support GET, POST, and DELETE requests.
+2.  **Multi-Language Greeting API:** Enhance the greeting API to support multiple languages. Use a query parameter (e.g., `?lang=fr`) to specify the language of the greeting. Default to English if the language is not supported.
+3.  **Validated Echo API:** Improve the echo API to validate the incoming JSON. Define a required schema (e.g., must contain `name` and `email` keys) and return an error if the JSON is invalid.
+4.  **Header Search API:** Extend the header inspector to allow searching for a specific header. Create an endpoint `/headers/search/<header_name>` that returns the value of the requested header, or a 404 error if it's not found.
+5.  **Templated HTML Renderer:** Modify the HTML rendering task to use Flask's templating engine. Create a simple HTML template and pass data from your Python code to be displayed on the page (e.g., a list of items).
