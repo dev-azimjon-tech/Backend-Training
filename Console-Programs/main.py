@@ -63,3 +63,49 @@
 #             print("Invalid item number.")
 #     else:
 #         print("Invalid option selected.")
+
+
+
+# Task 3:
+print("Welcome to the Number Guessing Game!")
+import random
+
+number_to_guess = random.randint(1, 100)
+attempts = 0
+
+
+while attempts == 0:
+    print("Choose the diffuculty level: \n 1. Easy (10 attempts) \n 2. Medium (7 attempts) \n 3. Hard (5 attempts)")
+    difficulty = input("Your choice: ")
+    if difficulty == '1':
+        attempts = 10
+    elif difficulty == '2':
+        attempts = 7
+    elif difficulty == '3':
+        attempts = 5
+    else:
+        print("Invalid choice. Please select 1, 2, or 3.")
+
+
+guessed_correctly = False
+while attempts > 0:
+    print(f"\nYou have {attempts} attempts left.")
+    try:
+        user_guess = int(input("Make a guess between 1 and 100: "))
+    except ValueError:
+        print("That's not a valid number. Try again.")
+        continue
+
+    if user_guess < number_to_guess:
+        print("Too low!")
+    elif user_guess > number_to_guess:
+        print("Too high!")
+    else:
+        print("Congratulations! You've guessed the number!")
+        guessed_correctly = True
+        break
+    
+    attempts -= 1
+
+if not guessed_correctly:
+    print(f"\nSorry, you ran out of attempts. The number was {number_to_guess}.")
