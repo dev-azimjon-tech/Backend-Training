@@ -67,45 +67,94 @@
 
 
 # Task 3:
-print("Welcome to the Number Guessing Game!")
-import random
+#print("Welcome to the Number Guessing Game!")
+#import random
 
-number_to_guess = random.randint(1, 100)
-attempts = 0
-
-
-while attempts == 0:
-    print("Choose the diffuculty level: \n 1. Easy (10 attempts) \n 2. Medium (7 attempts) \n 3. Hard (5 attempts)")
-    difficulty = input("Your choice: ")
-    if difficulty == '1':
-        attempts = 10
-    elif difficulty == '2':
-        attempts = 7
-    elif difficulty == '3':
-        attempts = 5
-    else:
-        print("Invalid choice. Please select 1, 2, or 3.")
+#number_to_guess = random.randint(1, 100)
+#attempts = 0
 
 
-guessed_correctly = False
-while attempts > 0:
-    print(f"\nYou have {attempts} attempts left.")
+#while attempts == 0:
+#    print("Choose the diffuculty level: \n 1. Easy (10 attempts) \n 2. Medium (7 attempts) \n 3. Hard (5 attempts)")
+#    difficulty = input("Your choice: ")
+#    if difficulty == '1':
+#        attempts = 10
+#    elif difficulty == '2':
+#        attempts = 7
+#    elif difficulty == '3':
+#        attempts = 5
+#    else:
+#        print("Invalid choice. Please select 1, 2, or 3.")
+
+
+#guessed_correctly = False
+#while attempts > 0:
+#    print(f"\nYou have {attempts} attempts left.")
+#    try:
+#        user_guess = int(input("Make a guess between 1 and 100: "))
+#    except ValueError:
+#        print("That's not a valithe number!")
+#        guessed_correctly = True
+#       break
+    
+#    attempts -= 1
+
+#if not guessed_correctly:
+#   print(f"\nSorry, you ran out of attempts. The number was {number_to_guess}.")
+
+
+# Mini Finance Tracker
+
+users = {}
+is_working = True
+print("Welcome to Mini Finance Tracker")
+
+
+user_register = input("Enter your name: ").strip()
+
+if user_register:
+    if user_register not in users:
+        users[user_register] = 0
+    print(f"Hello, {user_register}!")
+else:
+    print("Error: Name cannot be empty")
+    exit()
+while is_working:
+    print("\nChoose the function:")
+    print("1. See balance")
+    print("2. Remove from balance")
+    print("3. Add to balance")
+    print("4. Exit")
+
     try:
-        user_guess = int(input("Make a guess between 1 and 100: "))
+        choice = int(input("Your choice: "))
     except ValueError:
-        print("That's not a valid number. Try again.")
+        print("Please enter a valid number (1-4).")
         continue
 
-    if user_guess < number_to_guess:
-        print("Too low!")
-    elif user_guess > number_to_guess:
-        print("Too high!")
+    if choice == 1:
+        print(f"Your Balance is: {users[user_register]}")
+    elif choice == 2:
+        try:
+            remove_money = int(input("Enter money to remove from balance: "))
+        except ValueError:
+            print("Invalid input! Please enter a number.")
+            continue
+        if remove_money > users[user_register]:
+            print("Not enough balance!")
+        else:
+            users[user_register] -= remove_money
+            print(f"{remove_money} removed. New Balance: {users[user_register]}")
+    elif choice == 3:
+        try:
+            add_money = int(input("Enter money to add to balance: "))
+        except ValueError:
+            print("Invalid input! Please enter a number.")
+            continue
+        users[user_register] += add_money
+        print(f"{add_money} added. New Balance: {users[user_register]}")
+    elif choice == 4:
+        print("Exiting Mini Finance Tracker...")
+        is_working = False
     else:
-        print("Congratulations! You've guessed the number!")
-        guessed_correctly = True
-        break
-    
-    attempts -= 1
-
-if not guessed_correctly:
-    print(f"\nSorry, you ran out of attempts. The number was {number_to_guess}.")
+        print("Invalid choice! Please select 1, 2, 3, or 4.")
