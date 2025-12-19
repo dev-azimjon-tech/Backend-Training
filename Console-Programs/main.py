@@ -104,57 +104,65 @@
 
 
 # Mini Finance Tracker
+#users = {}
+#is_working = True
+#print("Welcome to Mini Finance Tracker")
 
-users = {}
-is_working = True
-print("Welcome to Mini Finance Tracker")
+
+#user_register = input("Enter your name: ").strip()
+
+#if user_register:
+#    if user_register not in users:
+#        users[user_register] = 0
+#    print(f"Hello, {user_register}!")
+#else:
+ #   print("Error: Name cannot be empty")
+  #  exit()
+#while is_working:
+ #   print("\nChoose the function:")
+  #  print("1. See balance")
+   # print("2. Remove from balance")
+    #print("3. Add to balance")
+    #print("4. Exit")
+
+  #  try:
+   #     choice = int(input("Your choice: "))
+    #except ValueError:
+     #   print("Please enter a valid number (1-4).")
+      #  continue
+
+   # if choice == 1:
+    #    print(f"Your Balance is: {users[user_register]}")
+    #elif choice == 2:
+     #   try:
+      #      remove_money = int(input("Enter money to remove from balance: "))
+       # except ValueError:
+         #   print("Invalid input! Please enter a number.")
+        #    continue
+        #if remove_money > users[user_register]:
+         #   print("Not enough balance!")
+       # else:
+        #    users[user_register] -= remove_money
+         #   print(f"{remove_money} removed. New Balance: {users[user_register]}")
+    #elif choice == 3:
+     #   try:
+       #     add_money = int(input("Enter money to add to balance: "))
+      #  except ValueError:
+        #    print("Invalid input! Please enter a number.")
+         #   continue
+        #users[user_register] += add_money
+        #print(f"{add_money} added. New Balance: {users[user_register]}")
+    #elif choice == 4:
+     #   print("Exiting Mini Finance Tracker...")
+      #  is_working = False
+    #else:
+     #   print("Invalid choice! Please select 1, 2, 3, or 4.")
 
 
-user_register = input("Enter your name: ").strip()
+# Word Reverse Task:
+work_code = 200
 
-if user_register:
-    if user_register not in users:
-        users[user_register] = 0
-    print(f"Hello, {user_register}!")
-else:
-    print("Error: Name cannot be empty")
-    exit()
-while is_working:
-    print("\nChoose the function:")
-    print("1. See balance")
-    print("2. Remove from balance")
-    print("3. Add to balance")
-    print("4. Exit")
+while work_code == 200:
+    word = input("Enter Word and Get Reverse: ")
+    print(f"Your Revesed word is: {word[::-1]}")
 
-    try:
-        choice = int(input("Your choice: "))
-    except ValueError:
-        print("Please enter a valid number (1-4).")
-        continue
-
-    if choice == 1:
-        print(f"Your Balance is: {users[user_register]}")
-    elif choice == 2:
-        try:
-            remove_money = int(input("Enter money to remove from balance: "))
-        except ValueError:
-            print("Invalid input! Please enter a number.")
-            continue
-        if remove_money > users[user_register]:
-            print("Not enough balance!")
-        else:
-            users[user_register] -= remove_money
-            print(f"{remove_money} removed. New Balance: {users[user_register]}")
-    elif choice == 3:
-        try:
-            add_money = int(input("Enter money to add to balance: "))
-        except ValueError:
-            print("Invalid input! Please enter a number.")
-            continue
-        users[user_register] += add_money
-        print(f"{add_money} added. New Balance: {users[user_register]}")
-    elif choice == 4:
-        print("Exiting Mini Finance Tracker...")
-        is_working = False
-    else:
-        print("Invalid choice! Please select 1, 2, 3, or 4.")
